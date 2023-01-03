@@ -5,7 +5,7 @@ const mongoUrl = 'mongodb://admin:root@localhost:27017/restapi?authSource=admin'
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true
 })
-.then(()=>console.log('connected'))
+.then(()=>console.log('Database Connected'))
 .catch(e=>console.log(e));
 
 mongoose.set('strictQuery', false);
