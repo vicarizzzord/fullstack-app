@@ -2,7 +2,7 @@ import mongoose from '../db';
 
 const ClientSchema = new mongoose.Schema({
 
-    nome:{
+    name:{
         type: String,
         required: true
     },

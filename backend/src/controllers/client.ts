@@ -4,12 +4,12 @@ import Client from '../models/client'
 
 const ClientController = Router()
 
-ClientController.post('/addClient', async (req: Request, res: Response) => {
+ClientController.post('/client', async (req: Request, res: Response) => {
     try {
-        const {email} = req.body;
+        const { email } = req.body;
 
 
-        if (await Client.findOne({email}))
+        if (await Client.findOne({ email }))
             res.status(400).send({ error: "E-mail ja cadastrado" })
 
         const newClient = await Client.create(req.body)
@@ -21,14 +21,14 @@ ClientController.post('/addClient', async (req: Request, res: Response) => {
     }
 })
 
-ClientController.delete('/deleteClient', async (req: Request, res: Response) => {
+ClientController.delete('/client/:email', async (req: Request, res: Response) => {
     try {
-        const {email} = req.body;
+        const { email } = req.body;
 
-        if (!await Client.findOne({email}))
+        if (!await Client.findOne({ email }))
             return res.status(404).send({ error: "Usuário não encontrado." })
 
-        await Client.deleteOne({email})
+        await Client.deleteOne({ email })
 
         return res.status(200).send({ message: "Usuário removido." })
     } catch (error) {
@@ -36,42 +36,42 @@ ClientController.delete('/deleteClient', async (req: Request, res: Response) => 
     }
 })
 
-ClientController.put('/updateClient', async (req: Request, res: Response) => {
+ClientController.put('/client', async (req: Request, res: Response) => {
     try {
-        const {email} = req.body;
-        const client = await Client.findOneAndUpdate({email}, req.body)
+        const { email } = req.body;
+        const client = await Client.findOneAndUpdate({ email }, req.body)
 
-        return res.status(200).send({client})
+        return res.status(200).send({ client })
 
     } catch (error) {
-        res.status(400).send({error: error.message})
+        res.status(400).send({ error: error.message })
     }
 })
 
-ClientController.get('/getClient', async (req: Request, res: Response) => {
+ClientController.get('/client/:email', async (req: Request, res: Response) => {
     try {
-        const {email} = req.body;
-        const client = await Client.findOne({email})
+        const { email } = req.body;
+        const client = await Client.findOne({ email })
 
-        if(!client)
-            res.status(404).send({error: "Cliente não encontrado."})
+        if (!client)
+            res.status(404).send({ error: "Cliente não encontrado." })
 
 
-        return res.status(200).send({client})
+        return res.status(200).send({ client })
 
 
     } catch (error) {
-        return res.status(400).send({error: error.message})
+        return res.status(400).send({ error: error.message })
     }
 })
 
-ClientController.get('/getClients', async (req: Request, res: Response) => {
+ClientController.get('/clients', async (req: Request, res: Response) => {
     try {
         const clients = await Client.find()
-        return res.status(200).send({clients})
+        return res.status(200).send(clients)
 
     } catch (error) {
-        return res.status(400).send({error: error.message})
+        return res.status(400).send({ error: error.message })
     }
 })
 

@@ -4,18 +4,25 @@ import ClientController from "./controllers/client"
 import APIController from "./controllers/fetches"
 import express from 'express';
 import bodyParser from 'body-parser'
+import cors from 'cors'
 
 
 dotenv.config()
 const app = express();
 const PORT = process.env.APP_PORT;
 
+
+
 app.use(
-    bodyParser.json(),
-    bodyParser.urlencoded({ extended: false }),
+    express.json(),
+    cors({
+        origin: '*'
+    }),
+    express.urlencoded({ extended: false }),
     AuthController,
     ClientController,
-    APIController);
+    APIController
+)
 
 
 app.listen(PORT, () => console.log("Server running on port 3000."));
