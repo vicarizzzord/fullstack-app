@@ -1,14 +1,22 @@
 export type Users = {
-    gender: string
-    name: {
-        first: string,
-        last: string,
-    },
-    picture: {
-        medium: string
-    }
-    location: string,
-    dob: string,
-    phone: string,
-    cell: string
-}
+  login: {
+    uuid: string
+  }
+  gender: string;
+  name: {
+    first: string;
+    last: string;
+  };
+  picture: {
+    medium: string;
+  };
+  location: {
+    city: string;
+    country: string;
+  };
+  dob: {
+    age: string;
+  };
+  phone: string;
+  cell: string;
+};

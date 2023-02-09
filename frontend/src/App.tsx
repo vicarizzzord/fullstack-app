@@ -1,8 +1,12 @@
-import { FormEvent, useEffect, useState } from 'react'
-import {Routes} from './routes/routes'
+import { Routes } from "./routes/routes";
+import "./styles/global.css"
 
-const App = () => (
-    <Routes />
-)
+const App = () => {
+  return (
+    <div className="flex">
+      <Routes />
+    </div>
+  );
+};
 
-export default App
+export default App;

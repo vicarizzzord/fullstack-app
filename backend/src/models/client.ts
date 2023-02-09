@@ -1,34 +1,41 @@
-import mongoose from '../db';
+import mongoose from "../db";
 
-const ClientSchema = new mongoose.Schema({
-
-    name:{
-        type: String,
-        required: true
+const ClientSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
     },
-    email:{
-        type: String,
-        required: true,
-        unique: true
-    },
-    phone: {
-        type: String,
-        required: true
-    },
-    street: {
-        type: String
-    },
-    number: {
-        type: String
-    },
-    district: {
-        type: String
+    email: {
+      type: String,
+      required: true,
+      unique: true,
     },
     cpf: {
-        type: String
-    }
-})
+      type: String,
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    city: {
+      type: String,
+    },
+    country: {
+      type: String,
+    },
+    street: {
+      type: String,
+    },
+    number: {
+      type: String,
+    },
+    district: {
+      type: String,
+    },
+  },
+);
 
-const Client = mongoose.model('Client', ClientSchema)
+const Client = mongoose.model("Client", ClientSchema);
 
 export default Client;
