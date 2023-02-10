@@ -28,7 +28,7 @@ const HomePage = () => {
             const photo = user.picture.medium;
             return (
               <ul
-                className="w-full items-center rounded-sm hover:bg-green-900"
+                className="w-full items-center rounded-sm hover:bg-green-600 transition-colors"
                 key={user.login.uuid}
               >
                 <div className="flex ml-3 items-center">

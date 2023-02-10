@@ -10,13 +10,15 @@ const CreateClient = () => {
 
   return (
     <>
-      <div>
+      <form className="w-full flex flex-col mt-8">
+      <label className="pb-3">Dados</label>
         <input
           placeholder="Nome"
           name="name"
           value={fields?.name}
           type="text"
           onChange={handleFields}
+          className="p-2 rounded-lg bg-zinc-800 text-white m-1"
         />
         <input
           placeholder="Email"
@@ -24,6 +26,7 @@ const CreateClient = () => {
           value={fields?.email}
           type="text"
           onChange={handleFields}
+          className="p-2 rounded-lg bg-zinc-800 text-white m-1"
         />
         <input
           placeholder="Telefone"
@@ -31,14 +34,25 @@ const CreateClient = () => {
           name="phone"
           type="text"
           onChange={handleFields}
+          className="p-2 rounded-lg bg-zinc-800 text-white m-1"
         />
-        <div className="address-container">
+        <input
+          placeholder="CPF"
+          value={fields?.cpf}
+          name="cpf"
+          type="text"
+          onChange={handleFields}
+          className="p-2 rounded-lg bg-zinc-800 text-white m-1"
+        />
+        <div className="w-full flex flex-col mt-8">
+          <label className="pb-3">Endereço</label>
           <input
             placeholder="Rua"
             value={fields?.street}
             name="street"
             type="text"
             onChange={handleFields}
+            className="p-2 rounded-lg bg-zinc-800 text-white m-1"
           />
           <input
             placeholder="Número"
@@ -46,6 +60,7 @@ const CreateClient = () => {
             name="number"
             type="text"
             onChange={handleFields}
+            className="p-2 rounded-lg bg-zinc-800 text-white m-1"
           />
           <input
             placeholder="Bairro"
@@ -53,18 +68,11 @@ const CreateClient = () => {
             name="district"
             type="text"
             onChange={handleFields}
-          />
-          <input
-            placeholder="CPF"
-            value={fields?.cpf}
-            name="cpf"
-            type="text"
-            onChange={handleFields}
+            className="p-2 rounded-lg bg-zinc-800 text-white m-1"
           />
         </div>
-        <button onClick={handleCreateSubmit}>Salvar</button>
-        <button onClick={handleUpdateSubmit}>Atualizar</button>
-      </div>
+        <button className="bg-green-600 rounded-lg p-2 m-1 hover:bg-green-500">Salvar</button>
+      </form>
     </>
   );
 };

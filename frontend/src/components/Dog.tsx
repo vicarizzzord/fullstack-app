@@ -48,8 +48,8 @@ const DogPage = () => {
             </video>
           )}
 
-          <div className="button-container">
-            <button className="update-btn">AU AU</button>
+          <div className="">
+            <button className="w-20 h-7 bg-zinc-600 border-zinc-600 rounded-sm hover:bg-green-600 transition-colors">AU AU</button>
           </div>
         </div>
       </div>

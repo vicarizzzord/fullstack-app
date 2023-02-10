@@ -2,7 +2,7 @@ import { HeaderProps } from "../types/header";
 
 export function Header(header: HeaderProps) {
   return (
-    <div className="w-52 h-auto bg-zinc-800">
+    <div className="w-52 h-full bg-zinc-800">
       <h2 className="pl-2 py-3 text-2xl font-bold">{header.page}</h2>
       <nav className="">
         <ul className="">

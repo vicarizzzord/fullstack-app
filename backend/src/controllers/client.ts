@@ -48,8 +48,9 @@ ClientController.put("/client", async (req: Request, res: Response) => {
 
 ClientController.get("/client/:name", async (req: Request, res: Response) => {
   try {
-    const { name } = req.body;
+    const { name } = req.params;
     const client = await Client.findOne({ name });
+    console.log(name)
 
     if (!client)
       return res.status(404).send({ error: "Cliente não encontrado." });
