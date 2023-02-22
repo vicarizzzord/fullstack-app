@@ -1,15 +1,5 @@
 # Fullstack App
 
-# Índice
-
-- [Início] (#título)
-- [Descrição do projeto] (#descrição-do-projeto)
-- [Status do projeto] (#status-do-projeto)
-- [Tecnologias] (#tecnologias)
-- [Funcionalidades] (#funcionalidades)
-- [Como rodar] (#como-rodar)
-- [Conclusão] (#conclusão)
-
 # Descrição do projeto
 
 O projeto se baseia em chamadas em API's, tanto externas quanto internas, para consumo dos dados retornados e renderização em tela. O projeto era processo seletivo no qual não tive tempo de finalizar por estar viajando, então resolvi finalizar o projeto e disponibilizar aqui no github como portfólio.
@@ -32,22 +22,22 @@ Quase finalizado, faltando somente a parte visual do CRUD de clientes realizado 
 
 # :hammer:  Funcionalidades
 
-- `1`: Página inicial com consumo de API com usuários aleatórios (randomuser.me)
-- `2`: CRUD de clientes com listagem de clientes
-- `3`: Consumo da API HTTPCats, no qual consiste em uma busca do código HTTP e caso o código não exista, a imagem da Gargantua irá aparecer
-- `4`: Consumo da API Random Dogs, um botão que retorna a imagem de um cachorro
+- `1` Página inicial com consumo de API com usuários aleatórios (randomuser.me)
+- `2` CRUD de clientes com listagem de clientes
+- `3` Consumo da API HTTPCats, no qual consiste em uma busca do código HTTP e caso o código não exista, a imagem da Gargantua irá aparecer
+- `4` Consumo da API Random Dogs, um botão que retorna a imagem de um cachorro
 
 
 
 # Como Rodar
-- 1 Com o projeto em mãos, rodar as instâncias do back-end:
+- Com o projeto em mãos, rodar as instâncias do back-end:
 ```
 docker-compose up
 ```
 ```
 yarn-dev
 ```
-- 2 Após a conexão com o banco de dados, iniciar o front-end:
+- Após a conexão com o banco de dados, iniciar o front-end:
 ```
 yarn dev
 ```
