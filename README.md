@@ -22,10 +22,10 @@ Quase finalizado, faltando somente a parte visual do CRUD de clientes realizado 
 
 # :hammer:  Funcionalidades
 
-- `1` Página inicial com consumo de API com usuários aleatórios (randomuser.me)
+- `1` Página inicial com consumo de API com usuários aleatórios (https://randomuser.me)
 - `2` CRUD de clientes com listagem de clientes
-- `3` Consumo da API HTTPCats, no qual consiste em uma busca do código HTTP e caso o código não exista, a imagem da Gargantua irá aparecer
-- `4` Consumo da API Random Dogs, um botão que retorna a imagem de um cachorro
+- `3` Consumo da API HTTPCats, no qual consiste em uma busca do código HTTP e caso o código não exista, a imagem da Gargantua irá aparecer (https://http.cat)
+- `4` Consumo da API Random Dogs, um botão que retorna a imagem de um cachorro (https://random.dog)
 
 
 
