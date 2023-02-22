@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { type } from "os";
 import Client from "../models/client";
 
 const ClientController = Router();
@@ -12,7 +13,7 @@ ClientController.post("/client", async (req: Request, res: Response) => {
 
     const newClient = await Client.create(req.body);
 
-    return res.status(200).send({ newClient });
+    return res.status(200).send(newClient);
   } catch (error) {
     return res.status(400).send({ error: error.message });
   }
@@ -22,12 +23,11 @@ ClientController.delete("/client/:_id", async (req: Request, res: Response) => {
   try {
     const { _id } = req.params;
     const client = await Client.findById(_id);
-    console.log(client)
 
     if (!client)
       return res.status(404).send({ error: "Cliente não encontrado." });
 
-    await Client.deleteOne({ client });
+    await Client.deleteOne(client);
 
     return res.status(200).send({ message: "Cliente removido." });
   } catch (error) {
@@ -35,12 +35,12 @@ ClientController.delete("/client/:_id", async (req: Request, res: Response) => {
   }
 });
 
-ClientController.put("/client", async (req: Request, res: Response) => {
+ClientController.patch("/client/:_id", async (req: Request, res: Response) => {
   try {
-    const { email } = req.body;
-    const client = await Client.findOneAndUpdate({ email });
+    const { _id } = req.params;
+    const client = await Client.findOneAndUpdate({ _id });
 
-    return res.status(200).send({ client });
+    return res.status(200).send(client);
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
@@ -50,7 +50,7 @@ ClientController.get("/client/:name", async (req: Request, res: Response) => {
   try {
     const { name } = req.params;
     const client = await Client.findOne({ name });
-    console.log(name)
+    console.log(name);
 
     if (!client)
       return res.status(404).send({ error: "Cliente não encontrado." });
